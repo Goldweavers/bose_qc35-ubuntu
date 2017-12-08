@@ -58,4 +58,18 @@ With content:
 load-module module-switch-on-connect
 ```
 
-Finished, you just have to reboot !
+Reboot now
+
+## Install Blueman manager
+
+via package manager:
+```bash
+sudo apt install blueman
+```
+
+To pair your headphone:
+
+1) Open blueman
+2) Right click on your headphone
+3) select "headset"
+4) hover "Audio profile" and select "A2DP"
