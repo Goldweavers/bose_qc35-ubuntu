@@ -13,7 +13,7 @@ Edit bluetooth configuration file:
 sudo nano /etc/bluetooth/main.conf
 ```
 
-remove # at begin if it exist and replace:
+Replace the following (remove the "#" symbol at beginning of the line if it exist):
 ```text
 ControllerMode = dual
 ```
@@ -33,7 +33,7 @@ Edit or create this file:
 ```bash
 sudo nano /var/lib/gdm3/.config/pulse/client.conf
 ```
-with content:
+Insert these following lines in this file:
 ```text
 autospawn = no
 daemon-binary = /bin/true
@@ -53,7 +53,7 @@ For Auto-connect A2DP, edit this file:
 ```bash
 sudo nano /etc/pulse/default.pa
 ```
-With content:
+Insert this line at the end of the file:
 ```text
 load-module module-switch-on-connect
 ```
