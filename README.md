@@ -53,7 +53,14 @@ For Auto-connect A2DP, edit this file:
 ```bash
 sudo nano /etc/pulse/default.pa
 ```
-Insert this line at the end of the file:
+If the file does not contain the following lines:
+```bash
+### Use hot-plugged devices like Bluetooth or USB automatically (LP: #1702794)
+.ifexists module-switch-on-connect.so
+load-module module-switch-on-connect
+.endif
+```
+Then insert this line at the end of the file:
 ```text
 load-module module-switch-on-connect
 ```
