@@ -60,12 +60,12 @@ If the file does not contain the following lines:
 load-module module-switch-on-connect
 .endif
 ```
-Then insert this line at the end of the file:
+Then you will need to insert the line below at the end:
 ```text
 load-module module-switch-on-connect
 ```
 
-Reboot now
+After saving these changes, you must **reboot now**.
 
 ## Install Blueman manager
 
