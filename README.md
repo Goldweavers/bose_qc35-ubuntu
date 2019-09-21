@@ -85,4 +85,4 @@ To pair your headphone:
 
 If you want to reverse this configuration, you just need to follow steps in reverse order.
 
-> Note: Thanks to issue #2, I have added to the repository ```pulseaudio.socket``` file which is removed at the end of step 3.
+> Note: Thanks to issue [#3](https://github.com/Goldweavers/bose_qc35-ubuntu/issues/2), I have added to the repository ```pulseaudio.socket``` file which is removed at the end of step 3.
