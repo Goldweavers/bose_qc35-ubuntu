@@ -1,12 +1,14 @@
 # Pair Bose QuietComfort 35 with Ubuntu over Bluetooth
 
-## Get back to a clean state
+This project is aiming to resolve problems that you can encounter when pairing your headphone.
+
+## 1) Get back to a clean state
    
 * On Ubuntu, remove the headphones from the Bluetooth paired list.
 
 * On the headphones, hold the switch in Bluetooth pairing position for 10 seconds to delete all paired devices (You'll get a voice confirmation).
 
-## Desactivate Bluetooth LE (Low Energy)
+## 2) Desactivate Bluetooth LE (Low Energy)
 
 Edit bluetooth configuration file:
 ```bash
@@ -27,7 +29,7 @@ Restart bluetooth service:
 sudo service bluetooth restart
 ```
 
-## Enable A2DP sink for stereo sound
+## 3) Enable A2DP sink for stereo sound
 
 Edit or create this file:
 ```bash
@@ -49,25 +51,23 @@ Disable pulseaudio startup:
 sudo rm /var/lib/gdm3/.config/systemd/user/sockets.target.wants/pulseaudio.socket
 ```
 
+## 4) Use hot-plugged devices like Bluetooth or USB automatically
+
 For Auto-connect A2DP, edit this file:
 ```bash
 sudo nano /etc/pulse/default.pa
 ```
-If the file does not contain the following lines:
-```bash
-### Use hot-plugged devices like Bluetooth or USB automatically (LP: #1702794)
-.ifexists module-switch-on-connect.so
-load-module module-switch-on-connect
-.endif
-```
-You will need to insert the line below at the end:
+
+Insert following lines at the end:
 ```text
-load-module module-switch-on-connect
+.ifexists module-switch-on-connect.so
+	load-module module-switch-on-connect
+.endif
 ```
 
 After saving these changes, you must **reboot now**.
 
-## Install Blueman manager
+## 5) Install Blueman manager
 
 via package manager:
 ```bash
@@ -80,3 +80,9 @@ To pair your headphone:
 2) Right click on your headphone
 3) select "headset"
 4) hover "Audio profile" and select "A2DP"
+
+# Undo this configuration
+
+If you want to reverse this configuration, you just need to follow steps in reverse order.
+
+> Note: Thanks to issue #2, I have added to the repository ```pulseaudio.socket``` file which is removed at the end of step 3.
