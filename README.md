@@ -31,6 +31,8 @@ sudo service bluetooth restart
 
 ## 3) Enable A2DP sink for stereo sound
 
+> Note: do this step only if you're using **gdm3**
+
 Edit or create this file:
 ```bash
 sudo nano /var/lib/gdm3/.config/pulse/client.conf
@@ -51,7 +53,9 @@ Disable pulseaudio startup:
 sudo rm /var/lib/gdm3/.config/systemd/user/sockets.target.wants/pulseaudio.socket
 ```
 
-## 4) Use hot-plugged devices like Bluetooth or USB automatically
+## 4) Optional: Use hot-plugged devices like Bluetooth or USB automatically
+
+This step aim to enable your headphone to auto-connect to your computer when you start it.
 
 For Auto-connect A2DP, edit this file:
 ```bash
@@ -67,7 +71,9 @@ Insert following lines at the end:
 
 After saving these changes, you must **reboot now**.
 
-## 5) Install Blueman manager
+## 5) Optional: Install Blueman manager
+
+> Note: I only tested this GUI but feel free to use whatever you want.
 
 via package manager:
 ```bash
@@ -85,4 +91,4 @@ To pair your headphone:
 
 If you want to reverse this configuration, you just need to follow steps in reverse order.
 
-> Note: Thanks to issue [#2](https://github.com/Goldweavers/bose_qc35-ubuntu/issues/2), I have added to the repository ```pulseaudio.socket``` file which is removed at the end of step 3.
+> Note: Thanks to issue [#2](https://github.com/Goldweavers/bose_qc35-ubuntu/issues/2), I added to repository ```pulseaudio.socket``` file which is removed at the end of step 3.
