@@ -2,6 +2,10 @@
 
 This project is aiming to resolve problems that you can encounter when pairing your headphone.
 
+#### Compatible products:
+* Bose QuietComfort 35
+* Bose QuietComfort 35 II
+
 ## 1) Get back to a clean state
    
 * On Ubuntu, remove the headphones from the Bluetooth paired list.
