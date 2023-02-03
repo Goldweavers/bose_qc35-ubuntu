@@ -59,14 +59,19 @@ sudo rm /var/lib/gdm3/.config/systemd/user/sockets.target.wants/pulseaudio.socke
 
 ## 4) Optional: Use hot-plugged devices like Bluetooth or USB automatically
 
-This step aim to enable your headphone to auto-connect to your computer when you start it.
+This step aim to enable your headphone to auto-connect to your computer when you start it. Check if it is already configured with:
 
-For Auto-connect A2DP, edit this file:
+```bash
+cat /etc/pulse/default.pa | grep -B 1 -A 3 'ifexists module-switch-on-connect.so'
+```
+
+If there are no matches for it, start configuring Auto-connect For A2DP editing this file:
+
 ```bash
 sudo nano /etc/pulse/default.pa
 ```
 
-Insert following lines at the end:
+Then insert following lines at the end:
 ```text
 .ifexists module-switch-on-connect.so
 	load-module module-switch-on-connect
