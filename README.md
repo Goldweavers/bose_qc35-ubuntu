@@ -6,6 +6,8 @@ This project is aiming to resolve problems that you can encounter when pairing y
 * Bose QuietComfort 35
 * Bose QuietComfort 35 II
 
+If this project has helped you, please consider making a [donation](https://github.com/sponsors/Goldweavers).
+
 ## 1) Get back to a clean state
    
 * On Ubuntu, remove the headphones from the Bluetooth paired list.
@@ -101,3 +103,7 @@ To pair your headphone:
 If you want to reverse this configuration, you just need to follow steps in reverse order.
 
 > Note: Thanks to issue [#2](https://github.com/Goldweavers/bose_qc35-ubuntu/issues/2), I added to repository ```pulseaudio.socket``` file which is removed at the end of step 3.
+
+# Buy me a coffee
+
+[![](https://img.shields.io/static/v1?label=Donate&message=%E2%9D%A4&logo=GitHub&color=%23fe8e86)](https://github.com/sponsors/Goldweavers)
